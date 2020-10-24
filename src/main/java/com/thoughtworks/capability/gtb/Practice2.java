@@ -11,6 +11,10 @@ import java.time.LocalDate;
 public class Practice2 {
 
   public static LocalDate getNextWorkDate(LocalDate date) {
-    return null;
+    int value = date.getDayOfWeek().getValue();
+    if (value >= 1 && value <= 4){
+      return date.plusDays(1);
+    }
+    return date.plusDays(8 - value);
   }
 }
